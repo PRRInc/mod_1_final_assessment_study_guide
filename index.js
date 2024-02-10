@@ -1,183 +1,338 @@
 // Write a function that takes a number as an argument and returns 'even' or 'odd'.
 
-// console.log(evenOrOdd(5)); // Output: 'odd'
-// console.log(evenOrOdd(4)); // Output: 'even'
+function evenOrOdd(num) {
+    if (num % 2 === 0) {
+        return "even";
+    } else {
+        return "odd";
+    }
+}
+
+console.log(evenOrOdd(5)); // Output: 'odd'
+console.log(evenOrOdd(4)); // Output: 'even'
 
 // ------------------------------------------------------------
 
 // Create a function that checks if the length of a given string is greater than a specified number. Return true or false.
 
-// console.log(isStringLengthGreaterThan("Hello, World!", 5)); // Output: true
+function isStringLengthGreaterThan(str, num) {
+    return str.length > num ? true : false;
+}
 
-// console.log(isStringLengthGreaterThan("Hello", 5)); // Output: false
+console.log(isStringLengthGreaterThan("Hello, World!", 5)); // Output: true
+
+console.log(isStringLengthGreaterThan("Hello", 5)); // Output: false
 
 // ------------------------------------------------------------
 
 // Implement a function that concatenates two strings and returns the result.
 
-// console.log(concatenateStrings("Hello", "World")); // Output: 'HelloWorld'
+function concatenateStrings(string1, string2) {
+    return string1 + string2;
+}
+
+console.log(concatenateStrings("Hello", "World")); // Output: 'HelloWorld'
 
 // ------------------------------------------------------------
 
 // Write a function using interpolation to generate a string that includes the value of a given variable.
 
-// console.log(interpolateVariable("My age is: ", 25)); // Output: 'My age is: 25'
+function interpolateVariable(str, ageVal) {
+    return `My age is: ${ageVal}`;
+}
 
-// console.log(interpolateVariable("My age is: ", 30)); // Output: 'My age is: 25'
+console.log(interpolateVariable("My age is: ", 25)); // Output: 'My age is: 25'
+
+console.log(interpolateVariable("My age is: ", 30)); // Output: 'My age is: 25'
 
 // ------------------------------------------------------------
 
 // Develop a function that calculates the sum of numbers in a given range.
 
-// console.log(sumRange(1, 5)); // Output: 15
-// console.log(sumRange(1, 6)); // Output: 21
+function sumRange(num1, num2) {
+    sum = 0;
+    for (let i = num1; i <= num2; i++) {
+        sum += i;
+    }
+    return sum;
+}
+
+console.log(sumRange(1, 5)); // Output: 15
+console.log(sumRange(1, 6)); // Output: 21
 
 // ------------------------------------------------------------
 
 // Create a function that sums up all odd numbers in a given range using a loop.
 
-// console.log(sumOddNumbersInRange(1, 10)); // Output: 25
-// console.log(sumOddNumbersInRange(1, 11)); // Output: 36
+function sumOddNumbersInRange(num1, num2) {
+    sum = 0;
+    for (let i = num1; i <= num2; i++) {
+        if(i % 2 === 1) {
+          sum += i;  
+        }
+    }
+    return sum;
+}
+
+console.log(sumOddNumbersInRange(1, 10)); // Output: 25
+console.log(sumOddNumbersInRange(1, 11)); // Output: 36
 
 // ------------------------------------------------------------
 
 // Implement a function that returns the first element of an array.
 
-// console.log(getFirstElement([1, 2, 3])); // Output: 1
-// console.log(getFirstElement([2, 3])); // Output: 2
+function getFirstElement(arr) {
+    return arr[0];
+}
+
+console.log(getFirstElement([1, 2, 3])); // Output: 1
+console.log(getFirstElement([2, 3])); // Output: 2
 
 // ------------------------------------------------------------
 
 // Write a function to get the last element of an array.
 
-// console.log(getLastElement([1, 2, 3])); // Output: 3
-// console.log(getLastElement([1, 2, 3, 4])); // Output: 4
+function getLastElement(arr) {
+    let lastElement = arr[arr.length - 1];
+    return lastElement;
+}
+
+console.log(getLastElement([1, 2, 3])); // Output: 3
+console.log(getLastElement([1, 2, 3, 4])); // Output: 4
 
 // ------------------------------------------------------------
 
 // Build a function to replace an element at a specific index in an array and returns the altered array.
 
-// console.log(replaceElementAtIndex([1, 2, 3], 1, 5)); // Output: [1, 5, 3]
-// console.log(replaceElementAtIndex([1, 2, 3], 2, 6)); // Output: [1, 5, 6]
+function replaceElementAtIndex(arr, index, ele) {
+    arr.splice(index, 1, ele);
+    return arr;
+}
+
+console.log(replaceElementAtIndex([1, 2, 3], 1, 5)); // Output: [1, 5, 3]
+console.log(replaceElementAtIndex([1, 2, 3], 2, 6)); // Output: [1, 5, 6]
 
 // ------------------------------------------------------------
 
 // Develop a function that removes an element from the beginning of an array.
 
-// console.log(removeFirstElement([1, 2, 3])); // Output: [2, 3]
-// console.log(removeFirstElement([0, 1, 2, 3])); // Output: [1, 2, 3]
+function removeFirstElement(arr) {
+    arr.shift();
+    return arr;
+}
+
+console.log(removeFirstElement([1, 2, 3])); // Output: [2, 3]
+console.log(removeFirstElement([0, 1, 2, 3])); // Output: [1, 2, 3]
 
 // ------------------------------------------------------------
 
 // Create a function to remove an element from the end of an array and return the removed element.
 
-// console.log(removeLastElement([1, 2, 3])); // Output: 3
-// console.log(removeLastElement([1, 2, 3, 4])); // Output: 4
+function removeLastElement(arr) {
+    return arr.pop();
+}
+
+console.log(removeLastElement([1, 2, 3])); // Output: 3
+console.log(removeLastElement([1, 2, 3, 4])); // Output: 4
 
 // ------------------------------------------------------------
 
 // Implement a function to remove an element at a given index in an array and returns the input array.
 
-// console.log(removeElementAtIndex([1, 2, 3], 1)); // Output: [1, 3]
-// console.log(removeElementAtIndex([1, 2, 3], 2)); // Output: [1, 2]
+function removeElementAtIndex(arr, index) {
+    arr.splice(index, 1)
+    return arr;
+}
+
+console.log(removeElementAtIndex([1, 2, 3], 1)); // Output: [1, 3]
+console.log(removeElementAtIndex([1, 2, 3], 2)); // Output: [1, 2]
 
 // ------------------------------------------------------------
 
 // Write a function that converts all characters in a string to uppercase.
 
-// console.log(toUpperCaseString("hello")); // Output: 'HELLO'
-// console.log(toUpperCaseString("world")); // Output: 'WORLD'
+function toUpperCaseString(str) {
+    return str.toUpperCase();
+}
+
+console.log(toUpperCaseString("hello")); // Output: 'HELLO'
+console.log(toUpperCaseString("world")); // Output: 'WORLD'
 
 // ------------------------------------------------------------
 
 // Create a function to properly capitalize each word in a string of words.
 
-// console.log(capitalizeWords("hello world")); // Output: 'Hello World'
-// console.log(capitalizeWords("whats up joe?")); // Output: 'Whats Up Joe?'
+// function capitalizeWords(str) {
+// return str.split(" ").map(word => word = word[0].toUpperCase() + word.slice(1)).join(" ");
+// }
+
+const capitalizeWords = (str) => str.split(" ").map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(" ");
+
+console.log(capitalizeWords("hello world")); // Output: 'Hello World'
+console.log(capitalizeWords("whats up joe?")); // Output: 'Whats Up Joe?'
 
 // ------------------------------------------------------------
 
 // Develop a function that returns the element at the middle index of an array.
 
-// console.log(getMidIndexElement([1, 2, 3, 4, 5])); // Output: 3
+function getMidIndexElement(arr) {
+    let middleIndex = Math.floor((0 + arr.length - 1)/2);
 
-// console.log(getMidIndexElement([1, 2, 3, 4, 5, 6, 7])); // Output: 4
+    return arr[middleIndex];
+}
+
+console.log(getMidIndexElement([1, 2, 3, 4, 5])); // Output: 3
+
+console.log(getMidIndexElement([1, 2, 3, 4, 5, 6, 7])); // Output: 4
 
 // ------------------------------------------------------------
 
 // Implement a function to calculate the sum of all numbers in an array.
 
-// console.log(sumArray([1, 2, 3, 4])); // Output: 10
-// console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+function sumArray(arr) {
+    return arr.reduce((acc, currVal) => acc + currVal, 0);
+}
+
+
+
+console.log(sumArray([1, 2, 3, 4])); // Output: 10
+console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
 
 // ------------------------------------------------------------
 
 // Create a function that returns the sum of all odd or even numbers in an array.
 
-// console.log(sumOddNumbersArray([1, 2, 3, 4])); // Output: 4
-// console.log(sumOddNumbersArray([1, 2, 3, 4, 5])); // Output: 9
+function sumOddNumbersArray (arr) {
+    return arr.filter(x => x % 2 === 1).reduce((acc, currVal) => acc + currVal);
+}
+
+console.log(sumOddNumbersArray([1, 2, 3, 4])); // Output: 4
+console.log(sumOddNumbersArray([1, 2, 3, 4, 5])); // Output: 9
 
 // ------------------------------------------------------------
 
 // Write a function to find the maximum number in an array using a loop and the accumulator pattern.
 
-// console.log(findMaxUsingLoop([1, 5, 3, 8, 2])); // Output: 8
-// console.log(findMaxUsingLoop([1, 5, 3, 2])); // Output: 5
+function findMaxUsingLoop(arr) {
+    let maxNum = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > maxNum) {
+            maxNum = arr[i];
+        }
+    }
+
+    return maxNum;
+
+}
+
+console.log(findMaxUsingLoop([1, 5, 3, 8, 2])); // Output: 8
+console.log(findMaxUsingLoop([1, 5, 3, 2])); // Output: 5
 
 // ------------------------------------------------------------
 
 // Develop a function to find the minimum number in an array using the .reduce method.
 
-// console.log(findMinUsingReduce([1, 5, 3, 8, 2])); // Output: 1
+function findMinUsingReduce(arr) {
+    return arr.reduce((acc, currVal) => currVal < acc ? acc = currVal : acc)
+}
 
-// console.log(findMinUsingReduce([5, 3, 8, 2])); // Output: 2
+console.log(findMinUsingReduce([1, 5, 3, 8, 2])); // Output: 1
+
+console.log(findMinUsingReduce([5, 3, 8, 2])); // Output: 2
 
 // ------------------------------------------------------------
 
 // Create a function to find the maximum number in an array using Math.max.
 
-// console.log(findMaxUsingMathMax([1, 5, 3, 8, 2])); // Output: 8
-// console.log(findMaxUsingMathMax([1, 5, 19, 8, 2])); // Output: 19
+function findMaxUsingMathMax(arr) {
+    let maxNum = Math.max(...arr);
+
+    return maxNum;
+}
+
+console.log(findMaxUsingMathMax([1, 5, 3, 8, 2])); // Output: 8
+console.log(findMaxUsingMathMax([1, 5, 19, 8, 2])); // Output: 19
 
 // ------------------------------------------------------------
 
 // Implement a function to create a new array with all numbers doubled using a for loop and the accumulator pattern.
 
-// console.log(doubleNumbersUsingLoop([1, 2, 3])); // Output: [2, 4, 6]
-// console.log(doubleNumbersUsingLoop([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
+function doubleNumbersUsingLoop(arr) {
+    const newArr = [];
+
+    for (let num of arr) {
+        newArr.push(num * 2);
+    }
+
+    return newArr;
+}
+
+console.log(doubleNumbersUsingLoop([1, 2, 3])); // Output: [2, 4, 6]
+console.log(doubleNumbersUsingLoop([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
 
 // ------------------------------------------------------------
 
 // Write a function to create a new array with all numbers doubled using the .map method.
 
-// console.log(doubleNumbersUsingMap([1, 2, 3])); // Output: [2, 4, 6]
-// console.log(doubleNumbersUsingLoop([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
+function doubleNumbersUsingMap(arr) {
+    return arr.map((ele) => ele * 2);
+}
+
+console.log(doubleNumbersUsingMap([1, 2, 3])); // Output: [2, 4, 6]
+console.log(doubleNumbersUsingMap([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
 
 // ------------------------------------------------------------
 
 // Develop a function to create a new array with only the odd numbers using a for loop and the accumulator pattern.
 
-// console.log(oddNumbersUsingLoop([1, 2, 3])); // Output: [1, 3]
-// console.log(oddNumbersUsingLoop([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
+function oddNumbersUsingLoop(arr) {
+    accArr = [];
+
+    for (let num of arr) {
+        if (num % 2 !== 0) {
+            accArr.push(num);
+        }
+    }
+    return accArr;
+}
+
+console.log(oddNumbersUsingLoop([1, 2, 3])); // Output: [1, 3]
+console.log(oddNumbersUsingLoop([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
 
 // ------------------------------------------------------------
 
 // Create a function to create a new array with only the odd numbers using the .filter method.
 
-// console.log(oddNumbersUsingFilter([1, 2, 3])); // Output: [1, 3]
-// console.log(oddNumbersUsingLoop([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
+function oddNumbersUsingFilter(arr) {
+    return arr.filter(x => x % 2 !== 0);
+}
+
+console.log(oddNumbersUsingFilter([1, 2, 3])); // Output: [1, 3]
+console.log(oddNumbersUsingFilter([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
 
 // ------------------------------------------------------------
 
 // Implement a function to find an element in an array using a for loop and the accumulator pattern. If the element can't be found in the array return an error string
 
-// console.log(findElementUsingLoop([1, 2, 3], 2)); // Output: 2
-// console.log(findElementUsingLoop(["a", "b", "c", "d"], "c")); // Output: "c"
-// console.log(findElementUsingLoop([1, 2, 3, 4 ,5], 6)); // Output: "ERROR"
+function findElementUsingLoop(arr, val) {
+    for (let ele of arr) {
+        if (ele === val) {
+            return ele;
+        }
+    }
+    return "ERROR";
+}
+
+console.log(findElementUsingLoop([1, 2, 3], 2)); // Output: 2
+console.log(findElementUsingLoop(["a", "b", "c", "d"], "c")); // Output: "c"
+console.log(findElementUsingLoop([1, 2, 3, 4 ,5], 6)); // Output: "ERROR"
 
 // ------------------------------------------------------------
 
 // Write a function to find an element in an array using the .find method.
+
+
 
 // console.log(findElementUsingLoop(["a", "b", "c", "d"], "c")); // Output: "c"
 // console.log(findElementUsingLoop([1, 2, 3, 4 ,5], 6)); // Output: "ERROR"
